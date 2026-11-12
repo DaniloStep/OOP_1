@@ -1,0 +1,75 @@
+#include <iostream>
+
+class Character {
+private:
+    int health;
+    int movementSpeed;
+    int armor;
+    int magicResist;
+
+public:
+    Character() {
+        health = 610;
+        movementSpeed = 335;
+        armor = 28;
+        magicResist = 31;
+    }
+
+    void setHP(int HP) {
+        if (HP > 0) {
+            health = HP;
+        }
+        else {
+            std::cout << "Error: Health cannot be negative or zero!" << std::endl;
+        }
+    }
+
+    void setMS(int MS) {
+        if (MS > 0) {
+            movementSpeed = MS;
+        }
+        else {
+            std::cout << "Error: Movement speed cannot be negative or zero!" << std::endl;
+        }
+    }
+
+    void setARM(int ARM) {
+        if (ARM > 0) {
+            armor = ARM;
+        }
+        else {
+            std::cout << "Error: Armor cannot be negative or zero!" << std::endl;
+        }
+    }
+
+    void setMR(int MR) {
+        if (MR > 0) {
+            magicResist = MR;
+        }
+        else {
+            std::cout << "Error: Magic resist cannot be negative or zero!" << std::endl;
+        }
+    }
+
+    int getHP() { return health; }
+    int getMS() { return movementSpeed; }
+    int getARM() { return armor; }
+    int getMR() { return magicResist; }
+};
+
+int main() {
+    Character Aatrox;
+
+    Aatrox.setHP(650);
+    Aatrox.setMS(345);
+    Aatrox.setARM(38);
+    Aatrox.setMR(32);
+
+    std::cout << "Aatrox's stats: " << std::endl;
+    std::cout << "Health:         " << Aatrox.getHP() << std::endl;
+    std::cout << "Movement speed: " << Aatrox.getMS() << std::endl;
+    std::cout << "Armor:          " << Aatrox.getARM() << std::endl;
+    std::cout << "Magic resist:   " << Aatrox.getMR() << std::endl;
+
+    return 0;
+}
